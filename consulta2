@@ -1,0 +1,69 @@
+CREATE TABLE ciudades(
+    id int NOT NULL,
+    nombre VARCHAR(30),
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE cliente(
+    id int NOT NULL,
+    nombre VARCHAR(30),
+    telefono int,
+    ciudad VARCHAR(30),
+    CONSTRAINT pk_id PRIMARY KEY(id)
+);
+
+CREATE TABLE automoviles(
+    placa int NOT NULL,
+    modelo int,
+    marca VARCHAR(30),
+    color int,
+    estado int,
+    PRIMARY KEY(placa)
+);
+
+CREATE TABLE comprar(
+    id_Cliente int NOT NULL,
+    placa int,
+    PRIMARY KEY(id_Cliente),
+    FOREIGN KEY(placa) REFERENCES automoviles(placa)
+);
+
+CREATE TABLE estados(
+    id int NOT NULL,
+    nombre VARCHAR(30),
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE colores(
+    id int NOT NULL,
+    nombre VARCHAR(30),
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE marcas(
+    id int NOT NULL,
+    nombre VARCHAR(30),
+    PRIMARY KEY(id)
+);
+CREATE TABLE empleado(
+    id int NOT NULL,
+    fecha_ingreso VARCHAR(30),
+    salario_basico VARCHAR(30),
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE comerciar(
+    placa VARCHAR(30) NOT NULL,
+    id_empelado int,
+    PRIMARY KEY(placa),
+    FOREIGN KEY(id_empelado) REFERENCES empleado(id)
+);
+
+CREATE TABLE venta(
+    id int NOT NULL,
+    id_empelado int ,
+    valor_renta int,
+    comision int,
+    PRIMARY KEY(id),
+    FOREIGN KEY(id_empelado) REFERENCES empleado(id)
+);

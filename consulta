@@ -1,0 +1,65 @@
+CREATE TABLE libro(
+    codigo int NOT NULL,
+    titulo VARCHAR(30),
+    nro_isbn int,
+    editorial VARCHAR(30),
+    edicion VARCHAR(30),
+    nro_paginas int,
+    autor VARCHAR(20),
+    CONSTRAINT pk_codigo PRIMARY KEY(codigo)
+);
+
+CREATE TABLE ejemplares(
+    codigo int NOT NULL,
+    ubicacion VARCHAR(30),
+    CONSTRAINT pk_codigo PRIMARY KEY (codigo)
+);
+
+CREATE TABLE editorial(
+    id int NOT NULL,
+    nombre VARCHAR(30),
+    CONSTRAINT pk_id PRIMARY KEY (id)
+);
+
+CREATE TABLE autor(
+    id int NOT NULL,
+    nombre VARCHAR(30),
+    CONSTRAINT pk_id PRIMARY KEY(id)
+);
+
+CREATE TABLE escribir(
+    ficha int NOT NULL,
+    autor int,
+    CONSTRAINT pk_ficha PRIMARY KEY (ficha),
+    CONSTRAINT fk_id FOREIGN KEY(autor) REFERENCES autor(id)
+);
+
+CREATE TABLE usuarios(
+    codigo int NOT NULL,
+    nombre VARCHAR(30),
+    direccion VARCHAR(30),
+    telefonos int,
+    CONSTRAINT pk_codigo PRIMARY KEY(codigo)
+);
+CREATE table ubicacion(
+    id int NOT NULL,
+    nombre VARCHAR(30),
+    CONSTRAINT pk_id PRIMARY KEY(id)
+);
+
+CREATE table prestamos(
+    codigo int NOT NULL,
+    fecha date,
+    dias_de_prestamo int,
+    fecha_de_devolucion date,
+    dias_efectivos int,
+    CONSTRAINT pk_codigo PRIMARY KEY(codigo)
+);
+
+CREATE TABLE multa(
+    id int NOT NULL,
+    valor_multa int,
+    fecha_actual date,
+    valor_neto int,
+    CONSTRAINT pk_id PRIMARY KEY (id)
+);
