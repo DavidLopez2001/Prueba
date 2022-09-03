@@ -21,6 +21,7 @@ for i in range (3):
 
 print ("Varlor Total: "+ str (precioA))
 print ("Varlor Total IVA INCLUIDA: "+ str (precioAI))
+print ("Puto el que lo lea")
 
 
 

@@ -63,3 +63,11 @@ CREATE TABLE multa(
     valor_neto int,
     CONSTRAINT pk_id PRIMARY KEY (id)
 );
+
+CREATE TABLE multa(
+    id int NOT NULL,
+    valor_multa int,
+    fecha_actual date,
+    valor_neto int,
+    CONSTRAINT pk_id PRIMARY KEY (id)
+);
