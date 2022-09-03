@@ -67,3 +67,11 @@ CREATE TABLE empleado(
     salario_basico VARCHAR(30),
     PRIMARY KEY(id)
 );
+
+CREATE TABLE empleado(
+    id int NOT NULL,
+	nombre VARCHAR(30),
+    fecha_ingreso VARCHAR(30),
+    salario_basico VARCHAR(30),
+    PRIMARY KEY(id)
+);
